@@ -39,4 +39,4 @@ class Configuration:
             if f.init
         }
 
-        return cls(**{k: v for k, v in values.items() if v})
+        return cls(**{k: v for k, v in values.items() if v is not None})

@@ -30,7 +30,9 @@ async def call_model(state: State, config: RunnableConfig, *, store: BaseStore) 
     )
 
     # Format memories for inclusion in the prompt
-    formatted = "\n".join(f"[{mem.key}]: {mem.value} (similarity: {mem.score})" for mem in memories)
+    formatted = "\n".join(
+        f"[{mem.key}]: {mem.value} (similarity: {mem.score})" for mem in memories
+    )
     if formatted:
         formatted = f"""
 <memories>
